@@ -8,6 +8,8 @@ import { FooterComponent } from './footer/footer.component';
 import { WeatherReportComponent } from './weather-report/weather-report.component';
 import { LatestNewsComponent } from './latest-news/latest-news.component';
 import { ImageSliderComponent } from './image-slider/image-slider.component';
+import { HomeComponent } from './home/home.component';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ImageSliderComponent } from './image-slider/image-slider.component';
     FooterComponent,
     WeatherReportComponent,
     LatestNewsComponent,
-    ImageSliderComponent
+    ImageSliderComponent,
+    HomeComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
