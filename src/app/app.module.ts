@@ -9,9 +9,16 @@ import { WeatherReportComponent } from './weather-report/weather-report.componen
 import { LatestNewsComponent } from './latest-news/latest-news.component';
 import { ImageSliderComponent } from './image-slider/image-slider.component';
 
+import { FormsModule }   from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ConnectionService } from './connection.service';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { HttpClientModule } from '@angular/common/http'; 
+
 @NgModule({
   declarations: [
     AppComponent,
+    ContactUsComponent,
     HeaderComponent,
     FooterComponent,
     WeatherReportComponent,
@@ -20,9 +27,12 @@ import { ImageSliderComponent } from './image-slider/image-slider.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ConnectionSe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
