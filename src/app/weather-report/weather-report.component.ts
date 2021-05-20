@@ -13,4 +13,5 @@ export class WeatherReportComponent implements OnInit {
   }
 
 }
+
 //2d0f6c1690b52987ab30046afb01bc39
