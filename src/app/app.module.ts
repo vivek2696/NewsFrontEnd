@@ -13,9 +13,11 @@ import { ErrorComponent } from './error/error.component';
 
 import { FormsModule }   from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ConnectionService } from './connection.service';
+import { ConnectionService } from './services/connection.service';
 import { ContactUsComponent } from './contact-us/contact-us.component';
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule } from '@angular/common/http';
+import { SportsComponent } from './sports/sports.component';
+import { AboutUsComponent } from './about-us/about-us.component'; 
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { HttpClientModule } from '@angular/common/http';
     LatestNewsComponent,
     ImageSliderComponent,
     HomeComponent,
-    ErrorComponent
+    ErrorComponent,
+    SportsComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [ConnectionSe],
+  providers: [ConnectionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
