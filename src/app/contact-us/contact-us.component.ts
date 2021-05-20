@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {  HostListener } from '@angular/core';
-import { ConnectionService } from '../connection.service';
-import { FormsModule }   from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms'; 
+import { ConnectionService } from '../services/connection.service';
+
+
 @Component({
   selector: 'app-contact-us',
   templateUrl: './contact-us.component.html',

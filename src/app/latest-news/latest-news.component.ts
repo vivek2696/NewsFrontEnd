@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { NewsTypeCommunicationService } from '../services/communication/news-type-communication.service';
 
 @Component({
   selector: 'latest-news',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LatestNewsComponent implements OnInit {
 
-  constructor() { }
+  @Input() newsType = '';
+
+  constructor(
+  ) { }
 
   ngOnInit(): void {
   }

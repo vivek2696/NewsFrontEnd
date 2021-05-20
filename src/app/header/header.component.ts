@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NewsTypeCommunicationService } from '../services/communication/news-type-communication.service';
 
 @Component({
   selector: 'header',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+  ) { }
 
   ngOnInit(): void {
   }
