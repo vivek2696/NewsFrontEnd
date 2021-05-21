@@ -12,28 +12,26 @@ import { ConnectionService } from '../services/connection.service';
 export class ContactUsComponent implements OnInit {
   contactForm: FormGroup;
   disabledSubmitButton: boolean = true;
-  optionsSelect: Array<any>;
 
+  //Listener for checking if form is valid or not
   @HostListener('input') oninput() {
 
     if (this.contactForm.valid) {
       this.disabledSubmitButton = false;
       }
-    }
+  }
 
 
 
   constructor(private fb: FormBuilder, private connectionService: ConnectionService) {
+    //Contact form builder
     this.contactForm = fb.group({
-      'contactFormName': ['', Validators.required],
-      'contactFormEmail': ['', Validators.compose([Validators.required, Validators.email])],
-      'contactFormSubjects': ['', Validators.required],
+      'contactFormEmail': ['', [Validators.required, Validators.email]],
       'contactFormMessage': ['', Validators.required],
-      'contactFormCopy': [''],
       });
    }
 
-   onSubmit() {
+  onSubmit() {
     this.connectionService.sendMessage(this.contactForm.value).subscribe(() => {
       alert('Your message has been sent.');
       this.contactForm.reset();

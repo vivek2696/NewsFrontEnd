@@ -1,0 +1,45 @@
+<div class="d-flex justify-content-center">
+    <div class="card m-5 register-card">
+      <h3 class="card-header">Register</h3>
+      <div class="card-body">   
+        <form 
+          form [formGroup]="registerForm" 
+          (ngSubmit)="onSubmit()">
+        
+          <div class="form-group">
+            <label > Name</label>
+              <input 
+                type="text" 
+                formControlName="name" 
+                id="name" 
+                mdbInput class="form-control mb-4" 
+                placeholder="Name"> 
+          </div>
+        
+          
+          <div class="form-group">
+            <label > Email</label>
+              <input 
+                type="email" 
+                formControlName="email"
+                id="email" 
+                mdbInput class="form-control mb-4" 
+                placeholder="E-mail"> 
+          </div>
+        
+          <div class="form-group">
+            <label > Password: </label>
+              <input
+                type="password" 
+                formControlName="password" 
+                class="form-control mb-4" 
+                mdbInput id="password"
+                rows="3" placeholder="password"/> 
+          </div>
+        
+          <button type="submit" class="btn btn-primary">Submit</button>
+        
+        </form>
+      </div>
+    </div>
+</div>
