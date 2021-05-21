@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { News } from '../sports';
-import { SportsService } from '../sports.service';
+import { News } from '../modals/sports';
+import { SportsService } from '../services/sports.service';
 
 @Component({
   selector: 'app-sports-news',
