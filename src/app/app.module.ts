@@ -18,6 +18,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SportsComponent } from './sports/sports.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { ChatComponent } from './chat/chat.component'; 
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminRegisterComponent } from './admin-register/admin-register.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component'; 
@@ -35,6 +36,7 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
     ErrorComponent,
     SportsComponent,
     AboutUsComponent,
+    ChatComponent
     AdminLoginComponent,
     AdminRegisterComponent,
     AdminHomeComponent
