@@ -17,7 +17,8 @@ import { ConnectionService } from './services/connection.service';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SportsComponent } from './sports/sports.component';
-import { AboutUsComponent } from './about-us/about-us.component'; 
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ChatComponent } from './chat/chat.component'; 
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
     HomeComponent,
     ErrorComponent,
     SportsComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
