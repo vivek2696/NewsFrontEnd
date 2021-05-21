@@ -1,11 +1,8 @@
 <div class="d-flex justify-content-center">
   <div class="card m-5 contact-us-card">
-    <h3 class="card-header">Contact Us </h3>
-    <div class="card-body">   
-      <form 
-        form [formGroup]="contactForm" 
-        (ngSubmit)="onSubmit()">
-      
+    <h3 class="card-header">Contact Us</h3>
+    <div class="card-body">
+      <form form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
         <!-- <div class="form-group">
           <label > Name</label>
             <input 
@@ -16,31 +13,33 @@
               mdbInput class="form-control mb-4" 
               placeholder="Name"> 
         </div> -->
-      
-        
+
         <div class="form-group">
-          <label > Email</label>
-            <input 
-              type="email" 
-              formControlName="contactFormEmail"
-              id="defaultContactFormEmail" 
-              mdbInput class="form-control mb-4" 
-              placeholder="E-mail"> 
+          <label> Email</label>
+          <input
+            type="email"
+            formControlName="email"
+            id="defaultContactFormEmail"
+            mdbInput
+            class="form-control mb-4"
+            placeholder="E-mail"
+          />
         </div>
-      
+
         <div class="form-group">
-          <label > Message </label>
-            <textarea 
-              formControlName="contactFormMessage" 
-              class="form-control rounded-0" 
-              mdbInput id="exampleFormControlTextarea2"
-              rows="3" placeholder="Message"></textarea> 
+          <label> Message </label>
+          <textarea
+            formControlName="query"
+            class="form-control rounded-0"
+            mdbInput
+            id="exampleFormControlTextarea2"
+            rows="3"
+            placeholder="Message"
+          ></textarea>
         </div>
-      
+
         <button type="submit" class="btn btn-primary">Submit</button>
-      
       </form>
     </div>
   </div>
 </div>
-  
