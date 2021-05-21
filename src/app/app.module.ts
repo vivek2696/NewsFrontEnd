@@ -22,6 +22,7 @@ import { ChatComponent } from './chat/chat.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminRegisterComponent } from './admin-register/admin-register.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { AdminQueryComponent } from './admin-query/admin-query.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
     AdminLoginComponent,
     AdminRegisterComponent,
     AdminHomeComponent,
+    AdminQueryComponent,
   ],
   imports: [
     BrowserModule,
