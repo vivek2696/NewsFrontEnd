@@ -8,6 +8,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminRegisterComponent } from './admin-register/admin-register.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { WeatherReportComponent } from './weather-report/weather-report.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'admin-login', component: AdminLoginComponent  },
   { path: 'admin-register', component: AdminRegisterComponent  },
   { path: 'admin-home', component:  AdminHomeComponent},
+  { path: 'weather', component: WeatherReportComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: ErrorComponent }
 ];
