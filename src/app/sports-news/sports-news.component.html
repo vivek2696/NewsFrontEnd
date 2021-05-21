@@ -1,0 +1,17 @@
+<div class='item' *ngFor="let item of news" attr.data-link='{{item.link}}'>
+    <img src='{{item.img}}' style='padding-top: 5px;padding-left: 1px;padding-bottom: 5px;padding-right: 5px;height: 88%;width: 25%;border-radius: 10px; float:left;'>
+    <p>
+      <strong>
+        <a href='{{item.link}}' title='{{item.title}}'>
+          {{item.title}}
+        </a>
+      </strong>
+      <br>
+      <small><em>Posted on {{item.date}}</em></small>
+    </p>
+    <p>
+      {{item.description}}
+    </p>
+  </div>
+
+  
