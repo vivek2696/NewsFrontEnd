@@ -17,7 +17,10 @@ import { ConnectionService } from './services/connection.service';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SportsComponent } from './sports/sports.component';
-import { AboutUsComponent } from './about-us/about-us.component'; 
+import { AboutUsComponent } from './about-us/about-us.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { AdminRegisterComponent } from './admin-register/admin-register.component';
+import { AdminHomeComponent } from './admin-home/admin-home.component'; 
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { AboutUsComponent } from './about-us/about-us.component';
     HomeComponent,
     ErrorComponent,
     SportsComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    AdminLoginComponent,
+    AdminRegisterComponent,
+    AdminHomeComponent
   ],
   imports: [
     BrowserModule,
