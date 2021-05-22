@@ -11,7 +11,7 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
 
 import { WeatherReportComponent } from './weather-report/weather-report.component';
 import { AdminQueryComponent } from './admin-query/admin-query.component';
-
+import { NewsArticleComponent } from './news-article/news-article.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -19,12 +19,13 @@ const routes: Routes = [
   { path: 'contact-us', component: ContactUsComponent },
   { path: 'about-us', component: AboutUsComponent },
 
-  { path: 'admin-login', component: AdminLoginComponent  },
-  { path: 'admin-register', component: AdminRegisterComponent  },
-  { path: 'admin-home', component:  AdminHomeComponent},
+  { path: 'admin-login', component: AdminLoginComponent },
+  { path: 'admin-register', component: AdminRegisterComponent },
+  { path: 'admin-home', component: AdminHomeComponent },
   { path: 'queryList', component: AdminQueryComponent },
-  { path: 'weather', component: WeatherReportComponent},
+  { path: 'weather', component: WeatherReportComponent },
 
+  { path: 'article/:name', component: NewsArticleComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: ErrorComponent },
 ];
