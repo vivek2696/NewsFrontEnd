@@ -1,8 +1,7 @@
 <div>
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark" id="nav">
-    <!-- Brand -->
-
-    <!-- Links -->
+  <br />
+  <!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark" id="nav">
+   
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" href="#">Today</a>
@@ -32,15 +31,37 @@
         </div>
       </li>
     </ul>
-  </nav>
-  <div class="latestbody">
-    The latest out put goes here
+  </nav> -->
+  <!-- <div class="latestbody">The latest out put goes here</div> -->
 
-    <div class="chatbox">
-      The chat box out put goes here
-      <app-chat></app-chat>
+  <div class="card">
+    <div class="row border" *ngFor="let n of allNews; let i = index">
+      <div class="col-sm-5">
+        <img
+          src="{{ n.image_url }}"
+          class="card-img-top embed-responsive-item"
+          alt="..."
+        />
+      </div>
+      <div class="col-sm-7">
+        <div class="card-body">
+          <h5 class="card-title">{{ n.title }}</h5>
+          <p class="card-text">
+            {{ n.createdAt | date: "mediumDate" }} | {{ n.description }}
+          </p>
+          <a href="{{ n.url }}" class="btn btn-primary stretched-link"
+            >Read More</a
+          >
+        </div>
+      </div>
     </div>
   </div>
+
+  <div class="chatbox">
+    The chat box out put goes here
+    <app-chat></app-chat>
+  </div>
+  <!-- </div> -->
 
   <div></div>
 </div>
