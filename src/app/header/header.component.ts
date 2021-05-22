@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AdminService } from '../services/admin.service';
 import { LoginCommunicationService } from '../services/communication/login-communication.service';
 
 @Component({
@@ -14,6 +15,7 @@ export class HeaderComponent implements OnInit {
   constructor(
     private _loginCommunication: LoginCommunicationService,
     private _router: Router,
+    private _adminService: AdminService
   ) {
     this.isAdminLoggedIn = false;
   }
@@ -33,6 +35,15 @@ export class HeaderComponent implements OnInit {
     else{
       this._router.navigate(['/home']);
     }
+  }
+  onLogout(){
+    this._adminService.adminLogout().subscribe(res => {
+      if(res){
+        console.log('Logged out Sucessfully!');
+        this.isAdminLoggedIn = false;
+        this._router.navigate(['/home']);
+      }
+    });
   }
 
 }

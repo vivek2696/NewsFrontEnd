@@ -41,4 +41,9 @@ export class AdminService {
     return this._http.put(editUrl, newsBody, { withCredentials: true });
   }
 
+  adminLogout(){
+    let logoutUrl = this.baseUrl + '/admin/logout';
+    return this._http.get(logoutUrl);
+  }
+
 }
