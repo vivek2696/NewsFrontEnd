@@ -8,3 +8,10 @@
     height: auto;
     
 }  */
+
+
+.container{
+    background-color: rgb(132, 132, 247);
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
