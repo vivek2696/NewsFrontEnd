@@ -1,9 +1,9 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <!-- Brand/logo -->
-  <a class="navbar-brand" [routerLink]="['/home']"><img src="../assets/images/news_logo.jpg" class="img-fluid" width="50px" height="50px"></a>
+  <a class="navbar-brand" (click)="this.onLogoClick()"><img src="../assets/images/news_logo.jpg" class="img-fluid" width="50px" height="50px"></a>
   
   <!-- Links -->
-  <ul class="navbar-nav">
+  <ul class="navbar-nav" *ngIf="!this.isAdminLoggedIn">
     <li class="nav-item">
       <a class="nav-link" [routerLink]="['/home']">Home</a>
     </li>
@@ -15,6 +15,15 @@
     </li>
     <li class="nav-item">
       <a class="nav-link" [routerLink]="['/about-us']">About Us</a>
+    </li>
+  </ul>
+
+  <ul class="navbar-nav" *ngIf="this.isAdminLoggedIn">
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/admin-home']">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/queries']">Customer Queries</a>
     </li>
   </ul>
 

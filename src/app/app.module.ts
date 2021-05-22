@@ -22,6 +22,10 @@ import { ChatComponent } from './chat/chat.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminRegisterComponent } from './admin-register/admin-register.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { CookieService } from 'ngx-cookie-service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EditNewsDialogComponent } from './edit-news-dialog/edit-news-dialog.component';
+import { MaterialModule } from './module/material/material.module';
 
 @NgModule({
   declarations: [
@@ -40,6 +44,7 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
     AdminLoginComponent,
     AdminRegisterComponent,
     AdminHomeComponent,
+    EditNewsDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,8 +52,10 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
-  providers: [ConnectionService],
+  providers: [ConnectionService, CookieService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
