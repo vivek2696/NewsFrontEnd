@@ -23,6 +23,7 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminRegisterComponent } from './admin-register/admin-register.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { AdminQueryComponent } from './admin-query/admin-query.component';
+import { NewsArticleComponent } from './news-article/news-article.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { AdminQueryComponent } from './admin-query/admin-query.component';
     AdminRegisterComponent,
     AdminHomeComponent,
     AdminQueryComponent,
+    NewsArticleComponent,
   ],
   imports: [
     BrowserModule,

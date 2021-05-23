@@ -27,3 +27,11 @@
     </div>
   </div>
 </div>
+
+<div id="chatbox" [style.visibility]="hideChat ? 'hidden' : 'visible'">
+  The chat box out put goes here
+  <app-chat></app-chat>
+</div>
+<button class="btn btn-primary myFAB" (click)="chatToggle()">
+  Chat Toogle
+</button>

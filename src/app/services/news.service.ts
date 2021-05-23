@@ -5,11 +5,22 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class NewsService {
+  url = 'http://localhost:3400/api/';
   private baseUrl = 'http://localhost:3400/api/regular-news';
 
-  constructor(private _http: HttpClient) {}
+  constructor(private http: HttpClient) {}
+
+  getAllNews() {
+    const getNewsURL = this.url + 'regular-news';
+    return this.http.get(getNewsURL);
+  }
+
+  getNewsArticleByURL(articleURL) {
+    const fullArticleURL = this.url + '/news/url/' + articleURL;
+    return this.http.get(fullArticleURL);
+  }
 
   getAllRegularNews() {
-    return this._http.get<any[]>(this.baseUrl);
+    return this.http.get<any[]>(this.baseUrl);
   }
 }
