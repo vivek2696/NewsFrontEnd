@@ -88,10 +88,9 @@
   </div>
 </section>
 
-<div id="chatbox" [style.visibility]="hideChat ? 'hidden' : 'visible'">
-  The chat box out put goes here
+<div id="chatbox" [style.visibility]="!hideChat ? 'hidden' : 'visible'">
   <app-chat></app-chat>
 </div>
-<button class="btn btn-primary myFAB" (click)="chatToggle()">
-  Chat Toogle
+<button class="myFAB" mat-fab color="accent" (click)="chatToggle()">
+  <mat-icon>mode_comment</mat-icon>
 </button>

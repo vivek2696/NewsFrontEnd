@@ -1,13 +1,32 @@
-<div>
-  <p>
-    <input id="nickText" type="text" />
-    <button id="nick">Set Name</button>
-  </p>
-  <textarea style="height: 300px; width: 500px" disabled></textarea>
-  <p>
-    <input id="chatText" type="text" />
-    <button id="chat">Send Chat Message</button>
-  </p>
-  <h2>Active User: <b id="listu"></b></h2>
-  <p id="activeuser"></p>
+<div class="chat-card">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>User Discussions</mat-card-title></mat-card-header
+    >
+    <mat-card-content>
+      <mat-form-field appearance="fill" class="chat-fields">
+        <mat-label>User name</mat-label>
+        <input matInput id="nickText" type="text" class="chat-fields" />
+      </mat-form-field>
+      <button mat-raised-button color="accent" id="nick">Set Name</button>
+      <textarea
+        id="chatTextArea"
+        style="height: 200px; width: 350px"
+        disabled
+      ></textarea>
+    </mat-card-content>
+
+    <mat-card-content>
+      <mat-form-field appearance="fill" class="chat-fields">
+        <mat-label>Message</mat-label>
+        <input matInput id="chatText" type="text" />
+      </mat-form-field>
+      <button mat-raised-button color="accent" id="chat">
+        <mat-icon>send</mat-icon>
+      </button>
+    </mat-card-content>
+
+    <!-- <h2>Active User: <b id="listu"></b></h2> -->
+    <!-- <p id="activeuser"></p> -->
+  </mat-card>
 </div>
