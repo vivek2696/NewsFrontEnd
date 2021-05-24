@@ -2,6 +2,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AdminService } from '../services/admin.service';
+import { LoginCommunicationService } from '../services/communication/login-communication.service';
 
 @Component({
   selector: 'app-admin-login',
@@ -15,7 +16,6 @@ export class AdminLoginComponent implements OnInit {
 
   //Listener for checking if form is valid or not
   @HostListener('input') oninput() {
-
     if (this.loginForm.valid) {
       this.disabledSubmitButton = false;
       }
@@ -25,7 +25,8 @@ export class AdminLoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private _adminService: AdminService,
-    private _router: Router
+    private _router: Router,
+    private _loginCommunication: LoginCommunicationService
   ) {
 
     this.loginForm = this.fb.group({
@@ -48,6 +49,7 @@ export class AdminLoginComponent implements OnInit {
       console.log('sending the information: ', this.loginForm.value);
       this._adminService.login(this.loginForm.value).subscribe(res => {
         if(res){
+          this._loginCommunication.raiseAdminLoginEvent();
           this._router.navigate(['/admin-home']);
         }
       }, (error) => {

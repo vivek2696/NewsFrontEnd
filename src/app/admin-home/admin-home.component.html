@@ -1,12 +1,62 @@
-<diV class="container">
-  <button
-    type="button"
-    class="btn btn-outline-primary mt-5"
-    (click)="onRegisterButton()"
-  >
-    Register New Admin
-  </button>
-  <br /><br />
-  <hr />
-  <h1>Admin Body!</h1>
-</diV>
+
+<div  class="container mb-5">
+    <button type="button" class="btn btn-outline-primary mt-5" (click)="onAddNews()">Add New News</button>
+    <br><br><hr> 
+    <div class="container mx-auto w-100">
+        <label class="display-4">All News</label>
+        <div class="list-group">
+            <div class="list-group-item" *ngFor="let news of this.allNews">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{news.title}}</h5>
+                <div>
+                    <button type="button" class="btn btn-outline-warning mr-3" (click)="onEditNews(news)">Edit</button>
+                    <button type="button" class="btn btn-outline-danger mr-2" (click)="onDeleteNews(news._id)">Delete</button>
+                </div>
+              </div>
+              <p class="mb-1">{{news.description}}</p>
+              <small>{{news.createdAt | date}}</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Edit Modal -->
+<!-- <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">Edit News</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form 
+            [formGroup]="editForm"
+            (ngSubmit)="onEditNews()">
+
+                <div class="form-outline mb-4">
+                    <input type="text" id="title" class="form-control form-control-lg" placeholder="Title" formControlName="title"/> 
+                </div>
+
+                <div class="form-outline mb-4">
+                    <input type="text" id="description" class="form-control form-control-lg" placeholder="Description" formControlName="description"/>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <input type="url" id="url" class="form-control form-control-lg" placeholder="Url" formControlName="url"/>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <input type="image_url" id="image_url" class="form-control form-control-lg" placeholder="Image_url" formControlName="imageUrl"/> 
+                </div>
+
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+</div> -->

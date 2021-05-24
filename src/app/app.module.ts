@@ -22,6 +22,10 @@ import { ChatComponent } from './chat/chat.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminRegisterComponent } from './admin-register/admin-register.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { CookieService } from 'ngx-cookie-service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EditNewsDialogComponent } from './edit-news-dialog/edit-news-dialog.component';
+import { MaterialModule } from './module/material/material.module';
 import { AdminQueryComponent } from './admin-query/admin-query.component';
 import { NewsArticleComponent } from './news-article/news-article.component';
 
@@ -42,6 +46,7 @@ import { NewsArticleComponent } from './news-article/news-article.component';
     AdminLoginComponent,
     AdminRegisterComponent,
     AdminHomeComponent,
+    EditNewsDialogComponent,
     AdminQueryComponent,
     NewsArticleComponent,
   ],
@@ -51,8 +56,10 @@ import { NewsArticleComponent } from './news-article/news-article.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
-  providers: [ConnectionService],
+  providers: [ConnectionService, CookieService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
