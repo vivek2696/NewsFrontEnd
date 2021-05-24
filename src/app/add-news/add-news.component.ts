@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
-import { Addnews } from '../news';
-import { SportsService} from '../sports.service';
+import { Addnews } from '../modals/news';
+import { SportsService} from '../services/sports.service';
 import { AlertService} from '../alert.service';
 @Component({
   selector: 'app-add-news',
