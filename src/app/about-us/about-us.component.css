@@ -1,0 +1,43 @@
+/* html {
+  font-family: "Robsoto", sans-serif;
+}
+body {
+  background: #d9b280;
+  font-family: "Roboto", sans-serif;
+} */
+
+.container {
+  background: #ffffff;
+  width: 900px;
+  height: 650px;
+  margin: 5% auto;
+  position: relative;
+}
+.container .map {
+  width: 45%;
+  float: left;
+}
+.container .contact-form {
+  width: 95%;
+  margin-left: 2%;
+  float: left;
+}
+.container .title {
+  font-size: 2.5em;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  color: #242424;
+  margin: 5% 8%;
+}
+.container .contact-form .subtitle {
+  font-size: 1.2em;
+  font-weight: 400;
+  margin: 0 4% 5% 8%;
+}
+/* .title {
+  font-size: 2.5em;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  color: #242424;
+  margin: 5% 8%;
+} */

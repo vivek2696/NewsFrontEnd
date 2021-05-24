@@ -1,8 +1,17 @@
-<div class="weather-body mx-auto">
-  <h4>{{ weather }}</h4>
-  <img src="http://openweathermap.org/img/w/{{ icon }}.png" alt="" />
-  <h4>{{ temp }} °F</h4>
-  <h2>{{ name }}</h2>
-  <h4>Humidity: {{ humidity }}%</h4>
-  <h4>Wind: {{ wind }} mph</h4>
+<div class="flex-container">
+    <div class="flex-child a">
+        <div class="inner">
+        <img src="http://openweathermap.org/img/w/{{icon}}.png" alt="">
+        <h1>{{temp}} °F</h1>
+        <div class="stack">
+           <p>Humidity: {{humidity}}%</p>
+           <p>Wind: {{wind}} mph</p>
+        </div>
+        </div>
+        </div>
+   
+     <div class="flex-child b">
+        <h2>{{name}}</h2>
+        <p>{{weather}}</p>
+     </div>
 </div>
