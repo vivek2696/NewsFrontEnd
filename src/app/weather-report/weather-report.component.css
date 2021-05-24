@@ -9,13 +9,31 @@
     
 }  */
 
-
-.weather-body{
-    background-color: rgb(132, 132, 247);
-    font-family: 'Roboto', sans-serif;
-    color: white;
+.flex-container{
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    background-color: black;
+    color: white;
 }
+
+.flex-child{
+    flex: 1;
+}
+
+.flex-child:first-child{
+     margin-right: 20px;
+}
+
+.inner{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+}
+
+.stack{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin: auto;
+}
+

@@ -16,7 +16,7 @@ export class ImageSliderComponent implements OnInit {
     this.newsService.getAllRegularNews().subscribe((newsArray) => {
       // TODO have to sort based on time for latest news
       //let tempArray = newsArray.sort(a)
-      this.newsList = newsArray;
+      this.newsList = newsArray?.slice(0, 3);
     });
   }
 }

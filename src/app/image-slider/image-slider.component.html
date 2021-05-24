@@ -1,4 +1,4 @@
-<div id="carouselControls" class="carousel slide bg-dark" data-ride="carousel">
+<div id="carouselControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div
       class="carousel-item active"
@@ -10,35 +10,16 @@
         class="d-block img-fluid w-75 mx-auto"
         alt="..."
       />
-      <div class="carousel-caption d-none d-md-block">
+      <div class="carousel-caption d-none d-md-block bg-dark w-75 mx-auto">
         <!-- External Article Link -->
         <!-- <a routerLink="{{ newsItem?.url }}"> -->
 
         <!-- Internal Article Link -->
-        <a routerLink="/article/{{ newsItem?.url }}">
+        <a class="linkNoDeco" routerLink="/article/{{ newsItem?.url }}">
           <h4 class="caroTitle">{{ newsItem?.title }}</h4>
-          <p class="caroTitle">
-            Some representative placeholder content for the first slide.
-          </p>
         </a>
       </div>
     </div>
-    <!-- <div class="carousel-item active">
-        <img src="https://images.unsplash.com/photo-1443866451220-8377d57c426a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" 
-             class="d-block img-fluid w-75 mx-auto" 
-             alt="..."/>
-      </div> -->
-
-    <!-- <div class="carousel-item">
-        <img src="https://s.abcnews.com/images/Politics/general-frank-mckenzie-central-command-02-abc-llr-210519_1621449747585_hpEmbed_4x3_992.jpg" 
-             class="d-block img-fluid w-75 mx-auto" 
-             alt="..."/>
-      </div>
-      <div class="carousel-item">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkajH7oJTFl3TzwGP_1SR_yCSrve33r4Shig&usqp=CAU" 
-             class="d-block img-fluid w-75 mx-auto" 
-            alt="..."/>
-      </div> -->
   </div>
   <a
     class="carousel-control-prev"

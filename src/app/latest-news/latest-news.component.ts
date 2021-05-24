@@ -19,7 +19,7 @@ export class LatestNewsComponent implements OnInit {
   }
   fetchNews() {
     this.newsService.getAllRegularNews().subscribe((data) => {
-      this.allNews = data;
+      this.allNews = data.slice(3, data?.length);
       console.log(this.allNews);
     });
   }
