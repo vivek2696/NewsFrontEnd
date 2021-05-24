@@ -14,18 +14,17 @@ import { EditNewsDialogComponent } from '../edit-news-dialog/edit-news-dialog.co
 export class AdminHomeComponent implements OnInit {
 
   allNews: INews[];
-  
 
   constructor(
     private fb: FormBuilder,
     private router: Router,
     private _adminService: AdminService,
     private dialog: MatDialog,
-  ) { 
+  ) {
     this.allNews = [];
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.fetchAllNews();
   }
 
@@ -41,7 +40,7 @@ export class AdminHomeComponent implements OnInit {
     })
   }
 
-  onDeleteNews(newsId: String){
+  onDeleteNews(newsId: string){
     this._adminService.delete(newsId).subscribe(res => {
       if(res){
         console.log('Deleted Successfully!');
@@ -57,7 +56,7 @@ export class AdminHomeComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if(result == true){
+      if(result === true){
         console.log('News Edited sucessfully!');
         this.fetchAllNews();
       }
