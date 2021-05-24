@@ -16,6 +16,8 @@ export class WeatherService {
   url = '';
   data;
   name;
+  wind;
+  humidity;
 
   constructor(private http: HttpClient) { 
     this.getCurrentWeather().subscribe(data => {
