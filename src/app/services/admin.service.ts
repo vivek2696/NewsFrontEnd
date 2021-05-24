@@ -44,7 +44,7 @@ export class AdminService {
     let logoutUrl = this.baseUrl + '/admin/logout';
     return this._http.get(logoutUrl);
   }
-  
+
   getAllQueries() {
     return this._http.get<any[]>(this.baseUrl2);
     //return this.allFoods;

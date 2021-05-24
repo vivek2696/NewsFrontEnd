@@ -35,4 +35,4 @@ export class WeatherService {
     return this.http.get("http://localhost:3400/api/weather");
   }
   
-  }
+}

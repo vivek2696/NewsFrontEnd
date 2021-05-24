@@ -1,12 +1,12 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <!-- Brand/logo src="../assets/images/mercaNews.png"-->
-  <a class="navbar-brand" [routerLink]="['/home']"
-    ><img
+  <a class="navbar-brand" role="button" (click)="this.onLogoClick()">
+    <img
       src="../assets/images/live-news-8-710031.png"
       class="img-fluid"
       width="50px"
-      height="50px"
-  /></a>
+      height="50px"/>
+  </a>
 
   <!-- Links -->
   <ul class="navbar-nav" *ngIf="!this.isAdminLoggedIn">
@@ -22,9 +22,6 @@
     <li class="nav-item">
       <a class="nav-link" [routerLink]="['/about-us']">About Us</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" [routerLink]="['/queryList']">Query List</a>
-    </li>
   </ul>
 
   <ul class="navbar-nav" *ngIf="this.isAdminLoggedIn">
@@ -32,7 +29,7 @@
       <a class="nav-link" [routerLink]="['/admin-home']">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" [routerLink]="['/queries']">Customer Queries</a>
+      <a class="nav-link" [routerLink]="['/queryList']">Customer Queries</a>
     </li>
   </ul>
 
