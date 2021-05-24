@@ -44,17 +44,17 @@
       socket.on("chat", function (data) {
         var currentTime = new Date().toLocaleTimeString("en-US");
         var msg = data.nick + ":" + currentTime + ":" + data.message;
-        $("textarea").val($("textarea").val() + msg + "\n");
+        $("#chatTextArea").val($("#chatTextArea").val() + msg + "\n");
       });
 
-      socket.on("userlist", (data) => {
-        data.map((item) => {
-          $("#activeuser").append(`UserId: <strong>${item}<strong><br/>`);
-        });
-        let total = data.length;
-        document.getElementById("listu").innerHTML = total;
-        $("b").val(total);
-      });
+      // socket.on("userlist", (data) => {
+      //   data.map((item) => {
+      //     $("#activeuser").append(`UserId: <strong>${item}<strong><br/>`);
+      //   });
+      //   let total = data.length;
+      //   document.getElementById("listu").innerHTML = total;
+      //   $("b").val(total);
+      // });
 
       // Handle UI
       $(function () {
