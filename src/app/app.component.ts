@@ -1,10 +1,27 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+
+export class Weather {
+  city: String
+  conditions: String
+  temperature: number
+  icon: String
+}
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+
+export class AppComponent implements OnInit {
+  
   title = 'NewsFrontEnd';
+
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
+  
+ 
+
 }

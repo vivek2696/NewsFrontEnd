@@ -1,5 +1,13 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
+
+// export class Weather {
+//   city: String
+//   conditions: String
+//   temperature: number
+//   icon: String
+// }
 @Component({
   selector: 'weather-report',
   templateUrl: './weather-report.component.html',
@@ -7,11 +15,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WeatherReportComponent implements OnInit {
 
-  constructor() { }
+ 
+
+ constructor(){}
 
   ngOnInit(): void {
   }
 
 }
 
-//2d0f6c1690b52987ab30046afb01bc39
