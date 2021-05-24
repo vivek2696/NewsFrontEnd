@@ -12,6 +12,8 @@ export class WeatherReportComponent implements OnInit {
   name= "";
   temp;
   icon;
+  wind;
+  humidity;
  
   constructor(private weatherService:WeatherService,private http: HttpClient, private router: Router) {
      
@@ -24,6 +26,8 @@ export class WeatherReportComponent implements OnInit {
       this.name = this.weatherService.name;
       this.temp = this.weatherService.temp;
       this.icon = this.weatherService.icon;
+      this.wind = this.weatherService.wind;
+      this.humidity = this.weatherService.humidity;
     })
   }
 
