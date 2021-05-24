@@ -28,6 +28,8 @@ import { EditNewsDialogComponent } from './edit-news-dialog/edit-news-dialog.com
 import { MaterialModule } from './module/material/material.module';
 import { AdminQueryComponent } from './admin-query/admin-query.component';
 import { NewsArticleComponent } from './news-article/news-article.component';
+import { AddNewNewsDialogComponent } from './add-new-news-dialog/add-new-news-dialog.component';
+import { AddNewAdminDialogComponent } from './add-new-admin-dialog/add-new-admin-dialog.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { NewsArticleComponent } from './news-article/news-article.component';
     EditNewsDialogComponent,
     AdminQueryComponent,
     NewsArticleComponent,
+    AddNewNewsDialogComponent,
+    AddNewAdminDialogComponent,
   ],
   imports: [
     BrowserModule,

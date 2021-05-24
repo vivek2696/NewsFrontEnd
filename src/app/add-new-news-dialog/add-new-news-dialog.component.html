@@ -1,0 +1,53 @@
+<form 
+[formGroup]="addForm"
+(ngSubmit)="onAddNews()">
+
+    <label mat-dialog-title>Add News</label>
+    <mat-divider></mat-divider>
+
+    <div mat-dialog-content class="mt-3">
+        <mat-form-field class="w-75 mx-auto my-2" appearance="fill">
+            <mat-label>Title</mat-label>
+            <input matInput id="title" type="text" formControlName="title" />
+        </mat-form-field>
+        <!-- <div class="form-outline mb-4">
+            <input type="text" id="title" class="form-control form-control-lg" placeholder="Title" formControlName="title"/> 
+        </div> -->
+    
+        <mat-form-field class="w-75 mx-auto my-2" appearance="fill">
+            <mat-label>Description</mat-label>
+            <textarea matInput id="description" type="text" formControlName="description" rows="10"></textarea>
+        </mat-form-field>
+    
+
+        <mat-form-field class="w-75 mx-auto my-2" appearance="fill">
+            <mat-label>URL</mat-label>
+            <input matInput id="url" type="text" formControlName="url" />
+        </mat-form-field>
+        <!-- <div class="form-outline mb-4">
+            <input type="url" id="url" class="form-control form-control-lg" placeholder="Url" formControlName="url"/>
+        </div> -->
+    
+        <mat-form-field class="w-75 mx-auto my-2" appearance="fill">
+            <mat-label>Image URL</mat-label>
+            <input matInput id="imageUrl" type="text" formControlName="imageUrl" />
+        </mat-form-field>
+        <!-- <div class="form-outline mb-4">
+            <input type="image_url" id="image_url" class="form-control form-control-lg" placeholder="Image_url" formControlName="imageUrl"/> 
+        </div> -->
+
+        <!-- <mat-checkbox id="isSports" [formControl]="isSports">Is Sports</mat-checkbox> -->
+        <div>
+            <mat-label class="mr-3">Category: </mat-label>
+            <mat-radio-group [formControl]="isSports">
+              <mat-radio-button class="mr-2" value="regular">Regular</mat-radio-button>
+              <mat-radio-button class="mr-2" value="sports">Sports</mat-radio-button>
+            </mat-radio-group>
+          </div>
+        <mat-divider></mat-divider>
+    </div>
+    <div mat-dialog-actions>
+        <button type="button" [disabled]="this.submitted" class="btn btn-secondary mr-3" (click)="onClose()">Close</button>
+        <button type="submit" [disabled]="this.submitted" class="btn btn-primary">Add</button>
+    </div>
+</form>

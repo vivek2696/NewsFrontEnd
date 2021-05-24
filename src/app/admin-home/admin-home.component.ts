@@ -5,6 +5,8 @@ import { INews } from '../Models/News';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { EditNewsDialogComponent } from '../edit-news-dialog/edit-news-dialog.component';
+import { AddNewNewsDialogComponent } from '../add-new-news-dialog/add-new-news-dialog.component';
+import { AddNewAdminDialogComponent } from '../add-new-admin-dialog/add-new-admin-dialog.component';
 
 @Component({
   selector: 'app-admin-home',
@@ -30,7 +32,16 @@ export class AdminHomeComponent implements OnInit {
   }
 
   onAddNews(){
-    this.router.navigate(['/addNewNews']);
+    const dialogRef = this.dialog.open(AddNewNewsDialogComponent, {
+      width: '840px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if(result === true){
+        console.log('News Added sucessfully!');
+        this.fetchAllNews();
+      }
+    });
   }
 
   fetchAllNews(){
@@ -65,7 +76,16 @@ export class AdminHomeComponent implements OnInit {
   }
   
   onAddNewAdmin(){
-    //Got to register page
+    const dialogRef = this.dialog.open(AddNewAdminDialogComponent, {
+      width: '840px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if(result === true){
+        console.log('News Added sucessfully!');
+        this.fetchAllNews();
+      }
+    });
   }
   
 }

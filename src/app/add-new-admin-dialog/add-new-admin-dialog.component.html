@@ -1,0 +1,46 @@
+<form 
+[formGroup]="addForm"
+(ngSubmit)="onAddAdmin()">
+
+    <label mat-dialog-title>Add New Admin</label>
+    <mat-divider></mat-divider>
+
+    <div mat-dialog-content class="mt-3">
+        <mat-form-field class="w-75 mx-auto my-2" appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput id="name" type="text" formControlName="name" />
+            <mat-error *ngIf="this.submitting && f.name.errors?.required">Name is required.</mat-error>
+            <mat-error *ngIf="this.submitting && f.name.errors?.pattern">Name is required.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="w-75 mx-auto my-2" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput id="email" type="email" formControlName="email" />
+            <mat-error *ngIf="this.submitting && f.email.errors?.required">Email is required.</mat-error>
+            <mat-error *ngIf="this.submitting && f.email.errors?.email">Email is invalid.</mat-error>
+        </mat-form-field>
+    
+        <mat-form-field class="w-75 mx-auto my-2" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput id="password" type="password" formControlName="password" />
+            <mat-error *ngIf="this.submitting && f.password.errors?.required">Password is required.</mat-error>
+            <mat-error *ngIf="this.submitting && f.password.errors?.minlength">Minimum length of password is 6 characters.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="w-75 mx-auto my-2" appearance="fill">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput id="confirmPassword" type="password" formControlName="confirmPassword" />
+            <mat-error *ngIf="this.submitting && f.confirmPassword.errors?.required">Confirm Password is required.</mat-error>
+            <mat-error 
+                *ngIf="this.submitting && 
+                       addForm.get('confirmPassword').errors?.ConfirmPassword">Password mismatch.
+            </mat-error>
+        </mat-form-field>
+
+        <mat-divider></mat-divider>
+    </div>
+    <div mat-dialog-actions>
+        <button type="button" [disabled]="this.submitted" class="btn btn-secondary mr-3" (click)="onClose()">Close</button>
+        <button type="submit" [disabled]="this.submitted" class="btn btn-primary">Add</button>
+    </div>
+</form>

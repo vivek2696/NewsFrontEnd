@@ -4,7 +4,7 @@
     <br><br><hr> 
     <div class="container mx-auto w-100">
         <label class="display-4">All News</label>
-        <table id="admin-news-table" class="table table-striped table-bordered admin-news">
+        <table datatable class="row-border hover">
           <tbody> 
             <tr *ngFor="let news of this.allNews">
               <td>
@@ -34,49 +34,3 @@
         </div> -->
     </div>
 </div>
-<script>
-  $(function() {
-    $('#admin-news-table').DataTable();
-  });
-</script>
-
-<!--Edit Modal -->
-<!-- <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editModalLabel">Edit News</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <form 
-            [formGroup]="editForm"
-            (ngSubmit)="onEditNews()">
-
-                <div class="form-outline mb-4">
-                    <input type="text" id="title" class="form-control form-control-lg" placeholder="Title" formControlName="title"/> 
-                </div>
-
-                <div class="form-outline mb-4">
-                    <input type="text" id="description" class="form-control form-control-lg" placeholder="Description" formControlName="description"/>
-                </div>
-
-                <div class="form-outline mb-4">
-                    <input type="url" id="url" class="form-control form-control-lg" placeholder="Url" formControlName="url"/>
-                </div>
-
-                <div class="form-outline mb-4">
-                    <input type="image_url" id="image_url" class="form-control form-control-lg" placeholder="Image_url" formControlName="imageUrl"/> 
-                </div>
-
-            </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-</div> -->
