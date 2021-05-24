@@ -9,7 +9,7 @@ import { EditNewsDialogComponent } from '../edit-news-dialog/edit-news-dialog.co
 @Component({
   selector: 'app-admin-home',
   templateUrl: './admin-home.component.html',
-  styleUrls: ['./admin-home.component.css']
+  styleUrls: ['./admin-home.component.css'],
 })
 export class AdminHomeComponent implements OnInit {
 
@@ -20,6 +20,7 @@ export class AdminHomeComponent implements OnInit {
     private router: Router,
     private _adminService: AdminService,
     private dialog: MatDialog,
+    private adminService: AdminService
   ) {
     this.allNews = [];
   }
@@ -61,6 +62,5 @@ export class AdminHomeComponent implements OnInit {
         this.fetchAllNews();
       }
     });
-  }
-
+  } 
 }

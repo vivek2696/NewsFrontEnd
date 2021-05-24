@@ -1,0 +1,26 @@
+<h1>Customer Queries</h1>
+<!---QUERY LIST-->
+<div class="container">
+  <table class="table">
+    <thead class="table">
+      <tr>
+        <th scope="col">EMAIL</th>
+        <th scope="col">QUERY</th>
+        <th>ACTION</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let q of allQueries; let i = index">
+      <tr>
+        <!-- <td>{{i+1}}</td> -->
+        <td>{{ q.email }}</td>
+        <td>{{ q.query }}</td>
+        <td>
+          <button type="button" (click)="removeQuery(q)" class="btn btn-danger">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!---QUERY LIST-->

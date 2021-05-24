@@ -26,6 +26,8 @@ import { CookieService } from 'ngx-cookie-service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditNewsDialogComponent } from './edit-news-dialog/edit-news-dialog.component';
 import { MaterialModule } from './module/material/material.module';
+import { AdminQueryComponent } from './admin-query/admin-query.component';
+import { NewsArticleComponent } from './news-article/news-article.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { MaterialModule } from './module/material/material.module';
     AdminRegisterComponent,
     AdminHomeComponent,
     EditNewsDialogComponent,
+    AdminQueryComponent,
+    NewsArticleComponent,
   ],
   imports: [
     BrowserModule,

@@ -4,22 +4,21 @@ import { Observable } from 'rxjs';
 import { INews } from '../Models/News';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AdminService {
-
   private baseUrl = 'http://localhost:3300/api';
+  private baseUrl2 = 'http://localhost:3400/api/query';
+  allQueries: any[];
 
-  constructor(
-    private _http: HttpClient
-  ) { }
+  constructor(private _http: HttpClient) {}
 
-  login(credentials: any){
+  login(credentials: any) {
     let loginUrl = this.baseUrl + '/admin/login';
     return this._http.post(loginUrl, credentials, {withCredentials: true});
   }
 
-  register(credentials: any){
+  register(credentials: any) {
     let registerUrl = this.baseUrl + '/admin/register';
     return this._http.post(registerUrl, credentials, {withCredentials: true});
   }
@@ -45,5 +44,14 @@ export class AdminService {
     let logoutUrl = this.baseUrl + '/admin/logout';
     return this._http.get(logoutUrl);
   }
+  
+  getAllQueries() {
+    return this._http.get<any[]>(this.baseUrl2);
+    //return this.allFoods;
+  }
 
+  removeQuery(index: any) {
+    console.log(this.baseUrl2 + '/' + index._id);
+    return this._http.delete(this.baseUrl2 + '/' + index._id);
+  }
 }
