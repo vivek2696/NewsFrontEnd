@@ -49,7 +49,10 @@
           <p class="card-text">
             {{ n.createdAt | date: "mediumDate" }} | {{ n.description }}
           </p>
-          <a href="{{ n.url }}" class="btn btn-primary stretched-link"
+          <a
+            href="{{ n.url }}"
+            target="_blank"
+            class="btn btn-primary stretched-link"
             >Read More</a
           >
         </div>
