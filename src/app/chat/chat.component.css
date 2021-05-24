@@ -1,0 +1,11 @@
+.chat-fields {
+  margin-right: 10px;
+}
+
+.chat-card {
+  margin: 10px;
+}
+
+#chatTextArea {
+  resize: none;
+}
