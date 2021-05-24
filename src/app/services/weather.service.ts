@@ -30,6 +30,8 @@ export class WeatherService {
       console.log(this.weather);
       this.icon = data.weather[0].icon;
       console.log(this.icon);
+      this.wind = data.wind.speed;
+      this.humidity = data.main.humidity;
   });
   }
 
