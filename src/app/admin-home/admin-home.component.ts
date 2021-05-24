@@ -62,5 +62,10 @@ export class AdminHomeComponent implements OnInit {
         this.fetchAllNews();
       }
     });
-  } 
+  }
+  
+  onAddNewAdmin(){
+    //Got to register page
+  }
+  
 }

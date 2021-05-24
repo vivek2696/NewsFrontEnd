@@ -1,6 +1,6 @@
-
 <div  class="container mb-5">
-    <button type="button" class="btn btn-outline-primary mt-5" (click)="onAddNews()">Add New News</button>
+    <button type="button" class="btn btn-outline-primary mt-5 mr-5" (click)="onAddNews()">Add New News</button>
+    <button type="button" class="btn btn-outline-primary mt-5" (click)="onAddNewAdmin()">Add New Admin</button>
     <br><br><hr> 
     <div class="container mx-auto w-100">
         <label class="display-4">All News</label>
@@ -34,6 +34,11 @@
         </div> -->
     </div>
 </div>
+<script>
+  $(function() {
+    $('#admin-news-table').DataTable();
+  });
+</script>
 
 <!--Edit Modal -->
 <!-- <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
