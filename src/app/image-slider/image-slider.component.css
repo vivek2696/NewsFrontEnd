@@ -1,8 +1,10 @@
-
-
-.container{
-    border:groove rgb(15, 18, 240);
-    margin-top: 10px;
+img {
+  object-fit: cover;
+  object-position: center;
+  max-height: 500px;
 }
 
-
+.caroTitle {
+  color: white;
+  text-shadow: 0 0 10px #000000;
+}

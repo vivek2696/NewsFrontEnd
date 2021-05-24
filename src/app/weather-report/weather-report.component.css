@@ -1,7 +1,21 @@
-
+/* 
 .container{
     border: groove;
     margin-top:10px;
     margin-right:0%;
     padding-bottom:0px;
+     width:auto;
+    height: auto;
+    
+}  */
+
+
+.weather-body{
+    background-color: rgb(132, 132, 247);
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 }

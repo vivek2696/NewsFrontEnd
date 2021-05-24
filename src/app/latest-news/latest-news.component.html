@@ -1,27 +1,63 @@
+<div>
+  <br />
+  <!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark" id="nav">
+   
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Today</a>
+      </li>
 
+      <li class="nav-item">
+        <a class="nav-link" href="#">Yesterday </a>
+      </li>
 
+      <li class="nav-item">
+        <a class="nav-link" href="#">Before two days</a>
+      </li>
 
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbardrop"
+          data-toggle="dropdown"
+          >Latest News</a
+        >
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Morning</a>
+          <a class="dropdown-item" href="#">Mid day</a>
+          <a class="dropdown-item" href="#">Night</a>
+          <a class="dropdown-item" href="#">Other</a>
+        </div>
+      </li>
+    </ul>
+  </nav> -->
+  <!-- <div class="latestbody">The latest out put goes here</div> -->
 
-<body>
-    <div  class="headermenu">
-     <nav class="navbar navbar-inverse">
-       <div class="container-fluid">
-         <div class="navbar-header">
-           <a class="navbar-brand" href="#">Today</a>      
-         </div>
-          <ul class="nav navbar-nav">
-           <li class="active"><a href="#">Yesterday</a></li>
-           
-           <li><a href="#">Before Yesterday</a></li>
-            
-           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Yesterday<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Latest1</a></li>
-              <li><a href="#">Latest2</a></li>
-              <li><a href="#">Latest3 </a></li>              
-            </ul>
-          </li>
-         </ul>
-       </div>
-     </nav>
-   </div>
+  <div class="card">
+    <div class="row border" *ngFor="let n of allNews; let i = index">
+      <div class="col-sm-5">
+        <img
+          src="{{ n.image_url }}"
+          class="card-img-top embed-responsive-item"
+          alt="..."
+        />
+      </div>
+      <div class="col-sm-7">
+        <div class="card-body">
+          <h5 class="card-title">{{ n.title }}</h5>
+          <p class="card-text">
+            {{ n.createdAt | date: "mediumDate" }} | {{ n.description }}
+          </p>
+          <a href="{{ n.url }}" class="btn btn-primary stretched-link"
+            >Read More</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- </div> -->
+
+  <div></div>
+</div>

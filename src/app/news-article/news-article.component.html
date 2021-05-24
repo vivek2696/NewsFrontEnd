@@ -1,0 +1,12 @@
+<div class="container text-center">
+  <h1 class="text-center">{{ newsObj?.title }}</h1>
+  <h6>{{ newsObj?.createdAt | date: "short" }}</h6>
+  <img
+    class=""
+    height="500px"
+    src="{{ newsObj?.image_url }}"
+    alt="News Image"
+  />
+
+  <p class="">{{ newsObj?.description }}</p>
+</div>
