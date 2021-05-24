@@ -9,6 +9,8 @@ import {Observable, throwError} from 'rxjs';
 export class WeatherService {
 
   icon;
+  wind;
+  humidity;
   weather;
   main;
   temp;
@@ -22,12 +24,10 @@ export class WeatherService {
       console.log(data);
       this.temp = data.main.temp;
       this.name = data.name;
-      console.log(this.temp);
-      console.log(this.name);
       this.weather = data.weather[0].main;
-      console.log(this.weather);
       this.icon = data.weather[0].icon;
-      console.log(this.icon);
+      this.wind = data.wind.speed;
+      this.humidity = data.main.humidity;
   });
   }
 
