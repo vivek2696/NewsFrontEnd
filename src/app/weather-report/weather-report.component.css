@@ -9,13 +9,13 @@
     
 }  */
 
-
-.weather-body{
-    background-color: rgb(132, 132, 247);
-    font-family: 'Roboto', sans-serif;
-    color: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+.weather-body {
+  background-color: rgb(132, 132, 247);
+  font-family: "Roboto", sans-serif;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 75%;
 }
