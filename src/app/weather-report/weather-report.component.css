@@ -1,16 +1,4 @@
-/* 
 .container{
-    border: groove;
-    margin-top:10px;
-    margin-right:0%;
-    padding-bottom:0px;
-     width:auto;
-    height: auto;
-    
-}  */
-
-.flex-container{
-    display: flex;
     font-family: 'Roboto', sans-serif;
     background-color: black;
     color: white;
@@ -20,9 +8,9 @@
     flex: 1;
 }
 
-.flex-child:first-child{
+/* .flex-child:first-child{
      margin-right: 20px;
-}
+} */
 
 .inner{
    display: flex;
