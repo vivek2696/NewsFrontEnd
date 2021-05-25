@@ -41,7 +41,7 @@ export class HeaderComponent implements OnInit {
       if(res){
         console.log('Logged out Sucessfully!');
         this.isAdminLoggedIn = false;
-        this._router.navigate(['/home']);
+        this._router.navigate(['/admin-login']);
       }
     });
   }

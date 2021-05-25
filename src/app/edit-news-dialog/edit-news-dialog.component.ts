@@ -14,6 +14,7 @@ export class EditNewsDialogComponent implements OnInit {
   editForm: FormGroup;
   editNews: INews;
   submitted: boolean;
+  submitting: boolean;
 
   constructor(
     private fb: FormBuilder,
@@ -23,12 +24,13 @@ export class EditNewsDialogComponent implements OnInit {
   ) { 
     console.log(data);
     this.submitted = false;
+    this.submitting = false;
     this.editNews = data;
     this.editForm = this.fb.group({
       title: [this.editNews.title, [Validators.required]],
       description: [this.editNews.description, [Validators.required]],
       url: [this.editNews.url, [Validators.required]],
-      imageUrl: [this.editNews.imageUrl, [Validators.required]]
+      image_url: [this.editNews.image_url, [Validators.required]]
     })
   }
 
@@ -39,14 +41,21 @@ export class EditNewsDialogComponent implements OnInit {
     this.dialogRef.close(false);
   }
 
+  get f() { return this.editForm.controls; }
+
   onEditNews(){
-    this.submitted = true;
-    //console.log(this.editForm.value);
-    this._adminService.editNews(this.data._id, this.editForm.value).subscribe(res => {
-      if(res){
-        this.dialogRef.close(true);
-      }
-    })
+    if(this.editForm.invalid){
+      this.submitting = true;
+      return;
+    }
+    else{
+      this.submitted = true;
+      this._adminService.editNews(this.data._id, this.editForm.value).subscribe(res => {
+        if(res){
+          this.dialogRef.close(true);
+        }
+      })
+    }
   }
 
 }

@@ -5,28 +5,23 @@
         <form 
           form [formGroup]="loginForm" 
           (ngSubmit)="onSubmit()">    
-          
-          <div class="form-group">
-            <label > Email</label>
-              <input 
-                type="email" 
-                formControlName="email"
-                id="email" 
-                mdbInput class="form-control mb-4" 
-                placeholder="E-mail"> 
-          </div>
-        
-          <div class="form-group">
-            <label > Password: </label>
-              <input
-                type="password" 
-                formControlName="password" 
-                class="form-control mb-4" 
-                mdbInput id="password"
-                rows="3" placeholder="password"/> 
-          </div>
-        
-          <button type="submit" class="btn btn-primary">Submit</button>
+
+          <mat-form-field class="w-75 mx-auto my-2" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput id="email" type="text" formControlName="email" />
+            <mat-error *ngIf="this.submitting && f.email?.errors">Email is required.</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="w-75 mx-auto my-2" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput id="password" type="password" formControlName="password" />
+            <mat-error *ngIf="this.submitting && f.password?.errors">Password is required.</mat-error>
+          </mat-form-field>
+
+          <br>
+          <mat-divider></mat-divider>
+          <br>
+          <button color="primary" mat-raised-button type="submit" class="btn">Submit</button>
         
         </form>
       </div>

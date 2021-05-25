@@ -20,7 +20,6 @@ import { SportsComponent } from './sports/sports.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ChatComponent } from './chat/chat.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
-import { AdminRegisterComponent } from './admin-register/admin-register.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { CookieService } from 'ngx-cookie-service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -28,6 +27,8 @@ import { EditNewsDialogComponent } from './edit-news-dialog/edit-news-dialog.com
 import { MaterialModule } from './module/material/material.module';
 import { AdminQueryComponent } from './admin-query/admin-query.component';
 import { NewsArticleComponent } from './news-article/news-article.component';
+import { AddNewNewsDialogComponent } from './add-new-news-dialog/add-new-news-dialog.component';
+import { AddNewAdminDialogComponent } from './add-new-admin-dialog/add-new-admin-dialog.component';
 
 @NgModule({
   declarations: [
@@ -44,11 +45,12 @@ import { NewsArticleComponent } from './news-article/news-article.component';
     AboutUsComponent,
     ChatComponent,
     AdminLoginComponent,
-    AdminRegisterComponent,
     AdminHomeComponent,
     EditNewsDialogComponent,
     AdminQueryComponent,
     NewsArticleComponent,
+    AddNewNewsDialogComponent,
+    AddNewAdminDialogComponent,
   ],
   imports: [
     BrowserModule,

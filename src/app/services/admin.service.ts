@@ -40,6 +40,11 @@ export class AdminService {
     return this._http.put(editUrl, newsBody, { withCredentials: true });
   }
 
+  addNews(newNews: INews){
+    let addUrl = this.baseUrl + '/admin/news/';
+    return this._http.post(addUrl, newNews, { withCredentials: true });
+  }
+
   adminLogout(){
     let logoutUrl = this.baseUrl + '/admin/logout';
     return this._http.get(logoutUrl);
@@ -54,4 +59,5 @@ export class AdminService {
     console.log(this.baseUrl2 + '/' + index._id);
     return this._http.delete(this.baseUrl2 + '/' + index._id);
   }
+
 }
