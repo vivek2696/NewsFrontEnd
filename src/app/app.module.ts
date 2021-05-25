@@ -20,7 +20,6 @@ import { SportsComponent } from './sports/sports.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ChatComponent } from './chat/chat.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
-import { AdminRegisterComponent } from './admin-register/admin-register.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { CookieService } from 'ngx-cookie-service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -46,7 +45,6 @@ import { AddNewAdminDialogComponent } from './add-new-admin-dialog/add-new-admin
     AboutUsComponent,
     ChatComponent,
     AdminLoginComponent,
-    AdminRegisterComponent,
     AdminHomeComponent,
     EditNewsDialogComponent,
     AdminQueryComponent,

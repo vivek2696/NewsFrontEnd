@@ -1,10 +1,10 @@
 <div  class="container admin-body">
-    <button type="button" class="btn btn-outline-primary mt-5 mr-5" (click)="onAddNews()">Add New News</button>
-    <button type="button" class="btn btn-outline-primary mt-5" (click)="onAddNewAdmin()">Add New Admin</button>
+    <button type="button" mat-stroked-button color="primary" class="btn mt-5 mr-5" (click)="onAddNews()">Add New News</button>
+    <button type="button" mat-stroked-button color="primary" class="btn mt-5" (click)="onAddNewAdmin()">Add New Admin</button>
     <br><br><hr> 
     <div class="container mx-auto pb-5 w-100">
         <label class="display-4">All News</label>
-        <table datatable class="table table-stripped table-bordered">
+        <table datatable class="table table-borderless">
           <tbody> 
             <tr *ngFor="let news of this.allNews">
               <td>
@@ -13,8 +13,12 @@
                 <small>{{news.createdAt | date}}</small>
               </td>
               <td>
-                <button type="button" class="btn btn-outline-warning mr-3" (click)="onEditNews(news)">Edit</button>
-                <button type="button" class="btn btn-outline-danger mr-2" (click)="onDeleteNews(news._id)">Delete</button>
+                <button mat-fab color="accent" type="button" class="btn btn-outline-warning mr-3" (click)="onEditNews(news)">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-fab color="warn" type="button" class="btn btn-outline-danger mr-2" (click)="onDeleteNews(news._id)">
+                  <mat-icon>delete</mat-icon>
+                </button>
               </td>
             </tr>
           </tbody>
