@@ -27,7 +27,7 @@ export class AddNewNewsDialogComponent implements OnInit {
       title: ['', [Validators.required]],
       description: ['', [Validators.required]],
       url: ['', [Validators.required]],
-      imageUrl: ['', [Validators.required]],
+      image_url: ['', [Validators.required]],
       isSports: this.isSports
     })
   }
