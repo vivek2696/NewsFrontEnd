@@ -5,3 +5,7 @@
 .admin-body{
     background-color: whitesmoke;
 }
+
+.table-options{
+    justify-content: end;
+}

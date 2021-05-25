@@ -4,7 +4,7 @@
     <br><br><hr> 
     <div class="container mx-auto pb-5 w-100">
         <label class="display-4">All News</label>
-        <table datatable class="table table-borderless">
+        <table datatable class="table table-borderless table-hover">
           <tbody> 
             <tr *ngFor="let news of this.allNews">
               <td>
@@ -12,8 +12,8 @@
                 <p class="mb-1">{{news.description}}</p>
                 <small>{{news.createdAt | date}}</small>
               </td>
-              <td>
-                <button mat-fab color="accent" type="button" class="btn btn-outline-warning mr-3" (click)="onEditNews(news)">
+              <td class="d-flex flex-row justify-content-end">
+                <button mat-fab color="accent" type="button" class="btn btn-outline-warning mr-5" (click)="onEditNews(news)">
                   <mat-icon>edit</mat-icon>
                 </button>
                 <button mat-fab color="warn" type="button" class="btn btn-outline-danger mr-2" (click)="onDeleteNews(news._id)">
