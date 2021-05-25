@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { AdminService } from '../services/admin.service';
 import { ConfirmPasswordValidator } from '../_helpers/mismatch.validator'
 
@@ -50,7 +51,6 @@ export class AddNewAdminDialogComponent implements OnInit {
     }
     else{
       this.submitted = true;
-      console.log(this.addForm.value);
 
       this._adminService.register(this.addForm.value).subscribe(res => {
         if(res){

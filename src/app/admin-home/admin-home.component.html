@@ -1,10 +1,10 @@
-<div  class="container mb-5">
+<div  class="container admin-body">
     <button type="button" class="btn btn-outline-primary mt-5 mr-5" (click)="onAddNews()">Add New News</button>
     <button type="button" class="btn btn-outline-primary mt-5" (click)="onAddNewAdmin()">Add New Admin</button>
     <br><br><hr> 
-    <div class="container mx-auto w-100">
+    <div class="container mx-auto pb-5 w-100">
         <label class="display-4">All News</label>
-        <table datatable class="row-border hover">
+        <table datatable class="table table-stripped table-bordered">
           <tbody> 
             <tr *ngFor="let news of this.allNews">
               <td>
@@ -19,18 +19,5 @@
             </tr>
           </tbody>
         </table>
-        <!-- <div class="list-group">
-            <div class="list-group-item" *ngFor="let news of this.allNews">
-              <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">{{news.title}}</h5>
-                <div>
-                    <button type="button" class="btn btn-outline-warning mr-3" (click)="onEditNews(news)">Edit</button>
-                    <button type="button" class="btn btn-outline-danger mr-2" (click)="onDeleteNews(news._id)">Delete</button>
-                </div>
-              </div>
-              <p class="mb-1">{{news.description}}</p>
-              <small>{{news.createdAt | date}}</small>
-            </div>
-        </div> -->
     </div>
 </div>

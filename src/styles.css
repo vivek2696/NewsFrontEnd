@@ -12,3 +12,14 @@ body {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.regular-snackbar{
+  background-color: whitesmoke;
+  color: black;
+}
+
+.error-snackbar{
+  background-color: whitesmoke;
+  color: red;
+}
+

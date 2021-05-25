@@ -14,6 +14,7 @@ export class AddNewNewsDialogComponent implements OnInit {
   addForm: FormGroup;
   isSports: FormControl =  new FormControl('', [Validators.required]);
   submitted: boolean;
+  submitting: boolean;
 
   constructor(
     private fb: FormBuilder,
@@ -21,6 +22,7 @@ export class AddNewNewsDialogComponent implements OnInit {
     private _adminService: AdminService
   ) { 
     this.submitted = false;
+    this.submitting = false;
     this.addForm = this.fb.group({
       title: ['', [Validators.required]],
       description: ['', [Validators.required]],
@@ -37,26 +39,33 @@ export class AddNewNewsDialogComponent implements OnInit {
     this.dialogRef.close(false);
   }
 
+  get f() { return this.addForm.controls; }
+
   onAddNews(){
-    this.submitted = true;
-    console.log(this.addForm.value);
-
-    let newNews: INews = {
-      _id: '',
-      title: this.addForm.value.title,
-      description: this.addForm.value.description,
-      url: this.addForm.value.url,
-      imageUrl: this.addForm.value.imageUrl,
-      isSports: this.addForm.value.isSports === 'regular'? false : true,
-      createdAt: null,
-      updatedAt: null,
+    if(this.addForm.invalid){
+      this.submitting = true;
+      return;
     }
+    else{
+      this.submitted = true;
 
-    this._adminService.addNews(newNews).subscribe(res => {
-      if(res){
-        this.dialogRef.close(true);
+      let newNews: INews = {
+        _id: '',
+        title: this.addForm.value.title,
+        description: this.addForm.value.description,
+        url: this.addForm.value.url,
+        image_url: this.addForm.value.image_url,
+        isSports: this.addForm.value.isSports === 'regular'? false : true,
+        createdAt: null,
+        updatedAt: null,
       }
-    })
+
+      this._adminService.addNews(newNews).subscribe(res => {
+        if(res){
+          this.dialogRef.close(true);
+        }
+      })
+    }
   }
 
 }
