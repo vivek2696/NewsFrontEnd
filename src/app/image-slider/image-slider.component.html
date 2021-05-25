@@ -15,7 +15,7 @@
         <!-- <a routerLink="{{ newsItem?.url }}"> -->
 
         <!-- Internal Article Link -->
-        <a class="linkNoDeco" routerLink="/article/{{ newsItem?.url }}">
+        <a class="linkNoDeco" href="{{ newsItem?.url }}" target="_blank">
           <h4 class="caroTitle">{{ newsItem?.title }}</h4>
         </a>
       </div>
