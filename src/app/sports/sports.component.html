@@ -1,6 +1,5 @@
-<div class="col-12 text-center pt-3">
+<div class="col-12 text-center pt-3 text-light bg-dark">
   <h1>Sports News</h1>
-  <p>Click on the news to read more</p>
 </div>
 
 <div class="row py-2">
@@ -25,6 +24,7 @@
     <div class="breaking-box pt-2 pb-1">
       <!--marque-->
       <marquee
+        class="bg-light"
         behavior="scroll"
         direction="left"
         onmouseover="this.stop();"
@@ -62,39 +62,126 @@
   </div>
 </div>
 
-<div
-  class="item"
-  *ngFor="let item of allSportsNews"
-  attr.data-link="{{ item.url }}"
->
-  <img
-    src="{{ item.image_url }}"
-    style="
-      padding-top: 5px;
-      padding-left: 1px;
-      padding-bottom: 5px;
-      padding-right: 5px;
-      height: 100%;
-      width: 20%;
-      border-radius: 10px;
-      float: left;
-    "
-  />
-  <p>
-    <strong>
-      <a href="{{ item.url }}" target="_blank" title="{{ item.title }}">
-        {{ item.title }}
-      </a>
-    </strong>
-    <br />
-    <small
-      ><em>Posted on {{ item.createdAt | date: "mediumDate" }}</em></small
-    >
-  </p>
-  <p>
-    {{ item.description }}
-  </p>
+<div class="sports-list mx-auto">
+  <div
+    class="item"
+    *ngFor="let item of allSportsNews"
+    attr.data-link="{{ item.url }}"
+  >
+    <img
+      src="{{ item.image_url }}"
+      style="
+        padding-top: 5px;
+        padding-left: 5px;
+        padding-bottom: 5px;
+        padding-right: 5px;
+        height: 100%;
+        width: 20%;
+        border-radius: 10px;
+        float: left;
+      "
+    />
+    <p>
+      <strong>
+        <a
+          href="{{ item.url }}"
+          target="_blank"
+          title="{{ item.title }}"
+          style="text-decoration: none; color: black"
+        >
+          {{ item.title }}
+        </a>
+      </strong>
+      <br />
+      <small
+        ><em>Posted on {{ item.createdAt | date: "mediumDate" }}</em></small
+      >
+    </p>
+    <p>
+      {{ item.description }}
+    </p>
+  </div>
 </div>
+
+<!-- <div class="my-3 mx-auto">
+  <div
+    class="item"
+    *ngFor="let item of allSportsNews"
+    attr.data-link="{{ item.url }}"
+  >
+    <img
+      src="{{ item.image_url }}"
+      style="
+        padding-top: 5px;
+        padding-left: 1px;
+        padding-bottom: 5px;
+        padding-right: 5px;
+        height: 100%;
+        width: 20%;
+        border-radius: 10px;
+        float: left;
+      "
+    />
+    <p>
+      <strong>
+        <a href="{{ item.url }}" target="_blank" title="{{ item.title }}">
+          {{ item.title }}
+        </a>
+      </strong>
+      <br />
+      <small
+        ><em>Posted on {{ item.createdAt | date: "mediumDate" }}</em></small
+      >
+    </p>
+    <p>
+      {{ item.description }}
+    </p>
+  </div>
+
+  <div
+    class="card mb-2 mx-auto news-cards"
+    style="width: 99%; max-height: 300px"
+    *ngFor="let n of allSportsNews; let i = index"
+  >
+    <a href="{{ n.url }}" class="card-linkz">
+      <div class="row no-gutters">
+        <div class="col">
+          <img
+            src="{{ n.image_url }}"
+            class="img-cardss"
+            alt=""
+            style="
+              padding-top: 5px;
+              padding-left: 1px;
+              padding-bottom: 5px;
+              padding-right: 5px;
+              height: 100%;
+              width: 20%;
+              border-radius: 10px;
+              float: left;
+            "
+          />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title" style="text-decoration: none">
+              {{ n.title }}
+            </h5>
+            <p class="card-text card-linkz">
+              {{ n.createdAt | date: "mediumDate" }}
+              | {{ n.description }}
+            </p>
+            <p class="card-text">
+              <small class="text-muted">{{
+                n.createdAt | date: "mediumDate"
+              }}</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</div> -->
 
 <!-- <div class="card">
   <div class="row border" *ngFor="let n of allSportsNews; let i = index">
