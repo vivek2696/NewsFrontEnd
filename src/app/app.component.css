@@ -1,0 +1,8 @@
+.app-content{
+    min-height: 100%;
+    margin-bottom: -200px;
+}
+
+.push{
+    height: 200px;
+}

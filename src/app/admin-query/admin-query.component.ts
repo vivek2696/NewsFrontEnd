@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { AdminService } from '../services/admin.service';
 
 @Component({
@@ -8,35 +9,27 @@ import { AdminService } from '../services/admin.service';
 })
 export class AdminQueryComponent implements OnInit {
   allQueries: any[];
-  constructor(private adminService: AdminService) {}
+  constructor(
+    private adminService: AdminService,
+    private querySnackBar: MatSnackBar
+  ) {}
 
   ngOnInit(): void {
     this.fetchQueries();
   }
 
   removeQuery(index: any) {
-    //console.log(orderId);
     this.adminService.removeQuery(index).subscribe((data) => {
       if (data) {
-        alert('Deleted Successfully');
+        this.querySnackBar.open("Deleted Successfully",  "", {duration: 5000, verticalPosition: 'top', panelClass: ['regular-snackbar']});
         this.fetchQueries();
       }
     });
-    // this.adminService.getAllQueries().subscribe((data) => {
-    //   this.allQueries = data;
-    //   console.log(this.allQueries);
-    // });
-    //this.allQueries = this.adminService.getAllQueries();
-    // this.adminService.getAllQueries().subscribe((data) => {
-    //   this.allQueries = data;
-    //   console.log(this.allQueries);
-    // });
   }
 
   fetchQueries() {
     this.adminService.getAllQueries().subscribe((data) => {
       this.allQueries = data;
-      console.log(this.allQueries);
     });
   }
 }
