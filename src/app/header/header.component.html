@@ -5,30 +5,31 @@
       src="../assets/images/live-news-8-710031.png"
       class="img-fluid"
       width="50px"
-      height="50px"/>
+      height="50px"
+    />
   </a>
 
   <!-- Links -->
   <ul class="navbar-nav" *ngIf="!this.isAdminLoggedIn">
-    <li class="nav-item">
+    <li class="nav-item" style="font-weight: bold">
       <a class="nav-link" [routerLink]="['/home']">Home</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" style="font-weight: bold">
       <a class="nav-link" [routerLink]="['/sports']">Sports</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" style="font-weight: bold">
       <a class="nav-link" [routerLink]="['/contact-us']">Contact Us</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" style="font-weight: bold">
       <a class="nav-link" [routerLink]="['/about-us']">About Us</a>
     </li>
   </ul>
 
   <ul class="navbar-nav" *ngIf="this.isAdminLoggedIn">
-    <li class="nav-item">
+    <li class="nav-item" style="font-weight: bold">
       <a class="nav-link" [routerLink]="['/admin-home']">Home</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" style="font-weight: bold">
       <a class="nav-link" [routerLink]="['/queryList']">Customer Queries</a>
     </li>
   </ul>
@@ -39,7 +40,11 @@
     <li class="nav-item" *ngIf="this.isAdminLoggedIn">
       <a class="nav-link" role="button" (click)="onLogout()">Logout</a>
     </li>
-    <li class="nav-item" *ngIf="!this.isAdminLoggedIn">
+    <li
+      class="nav-item"
+      *ngIf="!this.isAdminLoggedIn"
+      style="font-weight: bold"
+    >
       <a class="nav-link" [routerLink]="['/admin-login']">Admin Portal</a>
     </li>
   </ul>
