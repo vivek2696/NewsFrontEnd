@@ -6,23 +6,19 @@
           form [formGroup]="loginForm" 
           (ngSubmit)="onSubmit()">    
 
-          <mat-form-field class="w-75 mx-auto my-2" appearance="fill">
+          <mat-form-field class="w-100 mx-auto my-2" appearance="fill">
             <mat-label>Email</mat-label>
             <input matInput id="email" type="text" formControlName="email" />
             <mat-error *ngIf="this.submitting && f.email?.errors">Email is required.</mat-error>
           </mat-form-field>
 
-          <mat-form-field class="w-75 mx-auto my-2" appearance="fill">
+          <mat-form-field class="w-100 mx-auto my-2" appearance="fill">
             <mat-label>Password</mat-label>
             <input matInput id="password" type="password" formControlName="password" />
             <mat-error *ngIf="this.submitting && f.password?.errors">Password is required.</mat-error>
           </mat-form-field>
-
-          <br>
-          <mat-divider></mat-divider>
-          <br>
-          <button color="primary" mat-raised-button type="submit" class="btn">Submit</button>
-        
+          
+          <button type="submit" mat-stroked-button color="accent" class="btn-block">Sign in</button>
         </form>
       </div>
     </div>

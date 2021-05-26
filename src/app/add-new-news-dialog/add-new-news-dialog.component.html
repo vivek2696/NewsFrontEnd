@@ -2,37 +2,37 @@
 [formGroup]="addForm"
 (ngSubmit)="onAddNews()">
 
-    <label mat-dialog-title>Add News</label>
+    <h3 mat-dialog-title>Add News</h3>
     <mat-divider></mat-divider>
 
-    <div mat-dialog-content class="mt-3">
-        <mat-form-field class="w-75 mx-auto my-2" appearance="fill">
+    <div mat-dialog-content class="mt-3 mb-3">
+        <mat-form-field class="w-100 mx-auto my-2" appearance="fill">
             <mat-label>Title</mat-label>
-            <input matInput id="title" type="text" formControlName="title" />
+            <input matInput id="title" type="text" formControlName="title" required/>
             <mat-error *ngIf="this.submitting && f.title.errors">Title is required.</mat-error>
         </mat-form-field>
 
-        <mat-form-field class="w-75 mx-auto my-2" appearance="fill">
+        <mat-form-field class="w-100 mx-auto my-2" appearance="fill">
             <mat-label>Description</mat-label>
-            <textarea matInput id="description" type="text" formControlName="description" rows="10"></textarea>
+            <textarea matInput id="description" type="text" formControlName="description" rows="10" required></textarea>
             <mat-error *ngIf="this.submitting && f.description.errors">Description is required.</mat-error>
         </mat-form-field>
     
 
-        <mat-form-field class="w-75 mx-auto my-2" appearance="fill">
+        <mat-form-field class="w-100 mx-auto my-2" appearance="fill">
             <mat-label>URL</mat-label>
-            <input matInput id="url" type="text" formControlName="url" />
+            <input matInput id="url" type="text" formControlName="url" required/>
             <mat-error *ngIf="this.submitting && f.url.errors">Url is required.</mat-error>
         </mat-form-field>
     
-        <mat-form-field class="w-75 mx-auto my-2" appearance="fill">
+        <mat-form-field class="w-100 mx-auto my-2" appearance="fill">
             <mat-label>Image URL</mat-label>
-            <input matInput id="imageUrl" type="text" formControlName="image_url" />
+            <input matInput id="imageUrl" type="text" formControlName="image_url" required/>
             <mat-error *ngIf="this.submitting && f.image_url.errors">ImageUrl is required.</mat-error>
         </mat-form-field>
 
         <div>
-            <mat-label class="mr-3">Category: </mat-label>
+            <mat-label class="mr-3">Category*: </mat-label>
             <mat-radio-group [formControl]="isSports">
               <mat-radio-button class="mr-2" value="regular">Regular</mat-radio-button>
               <mat-radio-button class="mr-2" value="sports">Sports</mat-radio-button>
@@ -40,10 +40,9 @@
             <br>
             <label class="error-label" *ngIf="this.submitting && f.isSports.errors">Please select category</label>
           </div>
-        <mat-divider></mat-divider>
     </div>
     <div mat-dialog-actions>
-        <button mat-raised-button type="button" [disabled]="this.submitted" class="btn mr-3" (click)="onClose()">Close</button>
-        <button mat-raised-button color="primary" type="submit" [disabled]="this.submitted" class="btn">Add</button>
+        <button mat-stroked-button type="button" [disabled]="this.submitted" class="close-btn-block mr-3" (click)="onClose()">Close</button>
+        <button mat-stroked-button color="primary" type="submit" [disabled]="this.submitted" class="add-btn-block">Add</button>
     </div>
 </form>

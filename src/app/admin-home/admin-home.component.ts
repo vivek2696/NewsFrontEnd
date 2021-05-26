@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdminService } from '../services/admin.service';
 import { INews } from '../Models/News';
@@ -8,6 +8,9 @@ import { EditNewsDialogComponent } from '../edit-news-dialog/edit-news-dialog.co
 import { AddNewNewsDialogComponent } from '../add-new-news-dialog/add-new-news-dialog.component';
 import { AddNewAdminDialogComponent } from '../add-new-admin-dialog/add-new-admin-dialog.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-admin-home',
@@ -17,15 +20,21 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class AdminHomeComponent implements OnInit {
 
   allNews: INews[];
+  datasource: MatTableDataSource<INews>;
+  displayedColumns: string[] = ['news', 'action'];
+  searchValue: String;
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(
     private fb: FormBuilder,
     private router: Router,
     private adminService: AdminService,
     private dialog: MatDialog,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private datePipe: DatePipe
   ) {
-    this.allNews = [];
+    this.datasource = new MatTableDataSource([]);
   }
 
   ngOnInit() {
@@ -48,7 +57,9 @@ export class AdminHomeComponent implements OnInit {
   fetchAllNews(){
     this.adminService.getAllNews().subscribe(res => {
       if(res){
-        this.allNews = res;
+        this.datasource = new MatTableDataSource(res);
+        this.datasource.paginator = this.paginator;
+        this.allNews = this.datasource.data;
       }
     })
   }
@@ -89,6 +100,25 @@ export class AdminHomeComponent implements OnInit {
         this.fetchAllNews();
       }
     });
+  }
+
+  filterBy(value: any){
+    let tempList = this.allNews;
+    if(value.length > 0){
+      let filtered = tempList.filter((item: INews) => { 
+        console.log(this.datePipe.transform(item.createdAt, 'MM/dd/yyyy'));
+        return (item.title.toLowerCase().includes(value.toLowerCase()) ||
+                item.description.toLowerCase().includes(value.toLowerCase()) ||
+                this.datePipe.transform(item.createdAt, 'MM/dd/yyyy').includes(value) ||
+                item.url.toLocaleLowerCase().includes(value.toLowerCase()))
+      })
+      this.datasource = new MatTableDataSource(filtered);
+      this.datasource.paginator = this.paginator;
+    } else{
+      this.searchValue = '';
+      this.datasource = new MatTableDataSource(this.allNews);
+      this.datasource.paginator = this.paginator;
+    }
   }
   
 }

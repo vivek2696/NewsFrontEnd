@@ -1,0 +1,13 @@
+.add-btn-block{
+    width: 194px;
+    border:1px solid currentColor;
+    line-height:48px;
+    background:#e5e6f0;
+}
+
+.close-btn-block{
+    width: 194px;
+    border:1px solid currentColor;
+    line-height:48px;
+    background:#e7e7e7;
+}

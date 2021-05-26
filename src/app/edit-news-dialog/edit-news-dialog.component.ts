@@ -22,7 +22,6 @@ export class EditNewsDialogComponent implements OnInit {
     private _adminService: AdminService,
     @Inject(MAT_DIALOG_DATA) public data: INews
   ) { 
-    console.log(data);
     this.submitted = false;
     this.submitting = false;
     this.editNews = data;
